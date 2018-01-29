@@ -1,1 +1,17 @@
+
 /* This file is for your main application css. */
+
+body{
+        font-size: 20pt;
+}
+
+.card{
+        height: 100px;
+        width: 100px;
+        border: 1px solid black; 
+        text-align: center;
+}
+
+.card span{ 
+        line-height: 100px;
+} 

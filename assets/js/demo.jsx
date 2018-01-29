@@ -37,13 +37,13 @@ class Layout extends React.Component {
             this.state.cards[this.state.firstCard.rowIndex][this.state.firstCard.columnIndex].flipped = false;
             this.state.cards[card.rowIndex][card.columnIndex].flipped = false;
             this.setState({game: gameStates.FC,firstCard: null, cards: this.state.cards});
-          }, 500);
+          }, 300);
         } else {
           setTimeout(()=>{
-            this.state.cards[this.state.firstCard.rowIndex][this.state.firstCard.columnIndex].cardValue = "MATCH";
-            this.state.cards[card.rowIndex][card.columnIndex].cardValue = "MATCH";
+            this.state.cards[this.state.firstCard.rowIndex][this.state.firstCard.columnIndex].cardValue = "DONE";
+            this.state.cards[card.rowIndex][card.columnIndex].cardValue = "DONE";
             this.setState({game: gameStates.FC,firstCard: null, cards: this.state.cards});
-          }, 500);
+          }, 300);
         }
         break;
       }
@@ -76,11 +76,14 @@ function initialize(){
   return cards;
 }
 
+//Attribution: https://stackoverflow.com/questions/6495187/best-way-to-generate-empty-2d-array
 function createArray(x, y) {
   return Array.apply(null, Array(x)).map(function(e) {
     return Array(y);
   });
 }
+
+//Attribution: https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
 
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
